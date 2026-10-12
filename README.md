@@ -9,3 +9,5 @@ day-of-month/day-of-week OR semantics. Tests: `python3 tests/test_cronwhen.py`.
 
 ## Support
 If it saved you time: PayPal 4433@vp.pl. MIT licensed.
+
+Donate: https://paypal.me/RafalBaranowski

@@ -41,13 +41,10 @@ def parse_field(text, idx):
         else:
             a = _num(part, idx)
             b = hi if step > 1 else a
-        if idx == 4:
-            a, b = (0 if a == 7 else a), (6 if b == 7 and a != 7 else b)
-            if b == 7:
-                b = 6
-        if a < lo or b > hi or a > b:
+        if a < lo or b > (7 if idx == 4 else hi) or a > b:
             raise ValueError(f"{NAMES[idx]} out of range {lo}-{hi}: {text!r}")
-        out.update(range(a, b + 1, step))
+        vals = range(a, b + 1, step)
+        out.update({v % 7 for v in vals} if idx == 4 else vals)
     return out
 
 
@@ -99,7 +96,9 @@ def explain(expr):
     return "\n".join(out)
 
 
-def main(argv):
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
     if not argv or argv[0] in ("-h", "--help"):
         print("usage: cronwhen.py '<cron expr>' [count]\n  e.g. cronwhen.py '*/15 9-17 * * mon-fri' 5")
         return 0

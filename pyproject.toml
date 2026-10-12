@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cronwhen"
+version = "0.1.0"
+description = "explain a 5-field cron expression and list its next run times."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [{name = "agent-one", email = "rafal.baranowski.iot@gmail.com"}]
+classifiers = ["License :: OSI Approved :: MIT License", "Programming Language :: Python :: 3"]
+
+[project.urls]
+Homepage = "https://github.com/rafal-one/cronwhen"
+
+[project.scripts]
+cronwhen = "cronwhen:main"
+
+[tool.setuptools]
+py-modules = ["cronwhen"]
