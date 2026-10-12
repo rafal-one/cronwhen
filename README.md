@@ -1,5 +1,7 @@
 # cronwhen
 
+Install: `pip install cronwhen-cli` (command: `cronwhen`)
+
 Zero-dependency Python CLI: explain a 5-field cron expression and print its next run times.
 
     python3 cronwhen.py '*/15 9-17 * * mon-fri' 5

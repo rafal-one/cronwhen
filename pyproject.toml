@@ -3,7 +3,7 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cronwhen"
+name = "cronwhen-cli"
 version = "0.1.0"
 description = "explain a 5-field cron expression and list its next run times."
 readme = "README.md"
